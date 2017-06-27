@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Avatar",
+    "category": "sciencesfictio",
+    "releaseYear": "2010",
+    "poster": "server/img/avatar.jpg",
+    "directors": "James Cameron",
+    "actors": "Sam Worthington, Zoe Saldana, Sigourney Weaver, Stephen Lang, Michelle Rodriguez",
+    "synopsis": "Sur la lointaine planète de Pandora, Jake Sully, un hÃ©ros malgré lui, ",
+    "rate": 3,
+    "price": 25.46
+  },
+  {
+    "id": 2,
+    "title": "Seigneur des Anneaux : La Communauté de l'Anneau",
+    "category": "sciencesfiction",
+    "releaseYear": "2001",
+    "poster": "server/img/seigneurdesanneaux1.jpg",
+    "directors": "Peter Jackson",
+    "actors": "Elijah Wood, Sean Astin, Ian McKellen, Sala Baker, Viggo Mortensen",
+    "synopsis": "Frodon le Hobbit hérite de l'Anneau Unique, un instrument de pouvoir absolu",
+    "rate": 5,
+    "price": 34.76
+  }
+]
