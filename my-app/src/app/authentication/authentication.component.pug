@@ -1,0 +1,4 @@
+div
+  div {{ (user | async)?.uid }}
+  button (click)="login()">Login
+  button (click)="logout()">Logout

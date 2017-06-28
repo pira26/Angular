@@ -7,7 +7,7 @@ import {AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable} f
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'Angular first app';
   items: FirebaseListObservable<any>;
   constructor(db: AngularFireDatabase) {
     this.items = db.list('/movies');
