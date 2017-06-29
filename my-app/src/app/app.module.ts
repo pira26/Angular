@@ -1,9 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {RouterModule} from "@angular/router";
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { environment } from '../environments/environment';
+import {RouterModule} from "@angular/router";
 import {appRoutes} from "./app.routes";
 import { AppComponent } from './app.component';
 import {HeaderModule} from "./header/header.module";
@@ -16,9 +16,7 @@ import {Page5Module} from "./page5/page5.module";
 //import {AuthenticationModule} from "./authentication/authentication.module";
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),

@@ -1,7 +1,9 @@
-div.top-bar.row
-  div.top-bar-left.small-12.colums
+div.top-bar.row.expanded
+  div.top-bar-left.large-12.colums
     ul(data-dropdown-menu='').dropdown.menu
       li.menu-text Angular App
+      li
+        a(routerLink="/") Home
       li
         a(routerLink="/page1", routerLinkActive="active") One
       li
@@ -12,4 +14,3 @@ div.top-bar.row
         a(routerLink="/page4", routerLinkActive="active") Four
       li
         a(routerLink="/page5", routerLinkActive="active") Five
-

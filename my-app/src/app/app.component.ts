@@ -8,8 +8,8 @@ import {AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable} f
 })
 export class AppComponent {
   title = 'Angular first app';
-  items: FirebaseListObservable<any>;
+  movies: FirebaseListObservable<any>;
   constructor(db: AngularFireDatabase) {
-    this.items = db.list('/movies');
+    this.movies = db.list('/movies');
   }
 }

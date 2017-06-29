@@ -1,0 +1,4 @@
+div(*ngIf = "!(flag | async)")
+  button(type='button', (click)='plus()').hollow.button Increase
+  p {{ count | async }}
+  button(type='button', (click)='minus()').hollow.button Decrease
