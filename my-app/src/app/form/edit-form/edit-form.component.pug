@@ -1,0 +1,44 @@
+form((ngSubmit)='edit()', let form='ngForm')
+  div.small
+    div.small-12.columns
+      label
+        | Title
+        input(type='text', name='title', [(ngmodel)]='movie.title', placeholder='Title', required)
+    div.small-12.columns
+      label
+        | Category
+        input(type='text', name='category', [(ngmodel)]='movie.category', placeholder='Category', required)
+    div.small-12.columns
+      label
+        | Directors
+        input(type='text', name='directors', [(ngmodel)]='movie.directors', placeholder='Directors', required)
+    div.small-12.columns
+      label
+        | Release Year
+        input(type='text', name='releaseYear', [(ngmodel)]='movie.releaseYear', placeholder='Release Year', required)
+    div.small-12.columns
+      label
+        | Poster
+        input(type='text', name='poster', [(ngmodel)]='movie.poster', placeholder='URL Poster', required)
+    div.small-12.columns
+      label
+        | Actors
+        input(type='text', name='actors', [(ngmodel)]='movie.actors', placeholder='Actors', required)
+    div.small-12.columns
+      label
+        | Synopsis
+        input(type='text', name='synopsis', [(ngmodel)]='movie.synopsis', placeholder='Synopsis', required)
+    div.small-12.columns
+      label
+        | Rate
+        input(type='text', name='rate', [(ngmodel)]='movie.rate', placeholder='Rate', required)
+    div.small-12.columns
+      label
+        | Last View Date
+        input(type='text', name='lastViewDate', [(ngmodel)]='movie.lastViewDate', placeholder='Last View Date', required)
+    div.small-12.columns
+      label
+        | Price
+        input(type='text', name='price', [(ngmodel)]='movie.price', placeholder='Price', required)
+    div.small-12.colums.align-right
+      button(type='button',).button.success SAVE

@@ -1,0 +1,10 @@
+div
+  ul.menu
+    li
+      input(type='search', placeholder='Movie', (keyup)='onKey($event)')
+      input(type='search', placeholder='Movie', 'let box', (keyup.enter)='onEnter(box.value)')
+    li
+      button.button(type='button') Search
+div
+  ul(*ngFor='let movie of movies')
+    li(*ngIf='value === movie.title') {{ movie.title }}

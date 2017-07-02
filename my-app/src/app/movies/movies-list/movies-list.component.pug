@@ -1,0 +1,6 @@
+div.small-12.colums.text-align-center
+  ul
+    li(*ngFor='let movie of movies') {{ movie.title }}
+      button(type='button', (click)='updateMovie(movie.id.toString())').button.tiny.warning UPDATE
+      button(type='button', (click)='deleteMovie(movie.id.toString())').button.tiny.alert DELETE
+  button(type='button', (click)='sortMoviesByYear(movie.releaseYear)').button.tiny Sort

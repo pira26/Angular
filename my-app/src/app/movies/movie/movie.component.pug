@@ -1,0 +1,25 @@
+div(*ngIf='movie')
+  div.card
+    div.card-divider
+      h4 {{ movie.title }} by {{ movie.directors }}
+    img(src='{{ movie.poster }}')
+    div.card-section
+      p {{ movie.synopsis }}
+    table
+      thead
+        tr
+          th(width='100') Category
+          th Actors
+          th(width='150') Release Year
+          th(width='150') Last View Date
+          th(width='150') Rate
+          th(width='150') Price
+      tbody
+        tr
+          td {{ movie.category }}
+          td {{ movie.actors }}
+          td {{ movie.releaseYear }}
+          td {{ movie.lastYearDate }}
+          td {{ movie.rate }}
+          td {{ movie.price }}
+

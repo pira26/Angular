@@ -1,5 +1,5 @@
 div.top-bar.row.expanded
-  div.top-bar-left.large-12.colums
+  div.top-bar-left.small-6.colums
     ul(data-dropdown-menu='').dropdown.menu
       li.menu-text Angular App
       li
@@ -7,10 +7,9 @@ div.top-bar.row.expanded
       li
         a(routerLink="/page1", routerLinkActive="active") One
       li
-        a(routerLink="/page2", routerLinkActive="active") Two
+        a(routerLink="/movies", routerLinkActive="active") Movies
       li
-        a(routerLink="/page3", routerLinkActive="active") Three
+        a(routerLink="/add", routerLinkActive="active") Add Movie
       li
-        a(routerLink="/page4", routerLinkActive="active") Four
-      li
-        a(routerLink="/page5", routerLinkActive="active") Five
+        a(routerLink="/movie/:id", routerLinkActive="active") Movie
+  app-search.top-bar-right.small-6.colums

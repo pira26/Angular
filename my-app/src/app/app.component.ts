@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable} from 'angularfire2/database';
 
 @Component({
   selector: 'app-root',
@@ -7,9 +6,5 @@ import {AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable} f
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Angular first app';
-  movies: FirebaseListObservable<any>;
-  constructor(db: AngularFireDatabase) {
-    this.movies = db.list('/movies');
-  }
+  title = 'my first Angular app';
 }

@@ -1,0 +1,44 @@
+form((ngSubmit)='addPost(rForm.value)')
+  div.small
+    div.small-12.columns
+      label
+        | Title
+        input(type='text', placeholder='Title', formcontrolname='title')
+    div.small-12.columns
+      label
+        | Category
+        input(type='text', placeholder='Category', formcontrolname='category')
+    div.small-12.columns
+      label
+        | Directors
+        input(type='text', placeholder='Directors', formcontrolname='directors')
+    div.small-12.columns
+      label
+        | Release Year
+        input(type='text', placeholder='Release Year', formcontrolname='releaseYear')
+    div.small-12.columns
+      label
+        | Poster
+        input(type='text', placeholder='URL Poster', formcontrolname='poster')
+    div.small-12.columns
+      label
+        | Actors
+        input(type='text', placeholder='Actors', formcontrolname='actors')
+    div.small-12.columns
+      label
+        | Synopsis
+        input(type='text', placeholder='Synopsis', formcontrolname='synopsis')
+    div.small-12.columns
+      label
+        | Rate
+        input(type='text', placeholder='Rate', formcontrolname='rate')
+    div.small-12.columns
+      label
+        | Last View Date
+        input(type='text', placeholder='Last View Date', formcontrolname='lastViewDate')
+    div.small-12.columns
+      label
+        | Price
+        input(type='text', placeholder='Price', formcontrolname='price')
+    div.small-12.colums.align-right
+      button(type='button', value='Submit Form', [disabled]='!rForm.valid').button ADD
