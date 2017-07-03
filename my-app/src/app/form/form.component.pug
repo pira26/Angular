@@ -1,44 +1,45 @@
-form((ngSubmit)='addPost(rForm.value)')
+h2 Add Your Movie
+form([formGroup]='myForm', (ngSubmit)='addMovie(myForm.value, myForm.valid)')
   div.small
     div.small-12.columns
       label
         | Title
-        input(type='text', placeholder='Title', formcontrolname='title')
+        input(type='text', placeholder='Title', formControlName='title')
     div.small-12.columns
       label
         | Category
-        input(type='text', placeholder='Category', formcontrolname='category')
+        input(type='text', placeholder='Category', formControlName='category')
     div.small-12.columns
       label
         | Directors
-        input(type='text', placeholder='Directors', formcontrolname='directors')
+        input(type='text', placeholder='Directors', formControlName='directors')
     div.small-12.columns
       label
         | Release Year
-        input(type='text', placeholder='Release Year', formcontrolname='releaseYear')
+        input(type='text', placeholder='Release Year', formControlName='releaseYear')
     div.small-12.columns
       label
         | Poster
-        input(type='text', placeholder='URL Poster', formcontrolname='poster')
+        input(type='text', placeholder='URL Poster', formControlName='poster')
     div.small-12.columns
       label
         | Actors
-        input(type='text', placeholder='Actors', formcontrolname='actors')
+        input(type='text', placeholder='Actors', formControlName='actors')
     div.small-12.columns
       label
         | Synopsis
-        input(type='text', placeholder='Synopsis', formcontrolname='synopsis')
+        input(type='text', placeholder='Synopsis', formControlName='synopsis')
     div.small-12.columns
       label
         | Rate
-        input(type='text', placeholder='Rate', formcontrolname='rate')
+        input(type='text', placeholder='Rate', formControlName='rate')
     div.small-12.columns
       label
         | Last View Date
-        input(type='text', placeholder='Last View Date', formcontrolname='lastViewDate')
+        input(type='text', placeholder='Last View Date', formControlName='lastViewDate')
     div.small-12.columns
       label
         | Price
-        input(type='text', placeholder='Price', formcontrolname='price')
+        input(type='text', placeholder='Price', formControlName='price')
     div.small-12.colums.align-right
-      button(type='button', value='Submit Form', [disabled]='!rForm.valid').button ADD
+      button(type='submit', [disabled]='myForm.invalid').button.success.large ADD

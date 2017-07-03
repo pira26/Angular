@@ -8,7 +8,7 @@ import { MovieComponent } from './movies/movie/movie.component';
 export const appRoutes: Routes = [
   { path: 'page1', component:  Page1Component},
   { path: 'movies', component:  MoviesComponent},
+  { path: 'movies/:id', component:  MovieComponent},
   { path: 'add', component:  FormComponent},
-  { path: 'movie/:id', component:  MovieComponent},
   { path: '**', component: PageNotFoundComponent }
 ];

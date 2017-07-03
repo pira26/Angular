@@ -1,7 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from "rxjs/Subscription";
 import { MoviesService } from "../movies.service";
-import {FirebaseListObservable} from "angularfire2/database";
 import {ActivatedRoute, ParamMap, Router} from "@angular/router";
 import {Observable} from "rxjs/Observable";
 
@@ -12,7 +11,7 @@ import {Observable} from "rxjs/Observable";
 })
 export class MovieComponent implements OnInit, OnDestroy {
 
-  movie :Observable<ParamMap>;
+  movie :Array<object>;
   private selectedId :number;
   private subscription :Subscription;
   constructor(
@@ -20,7 +19,7 @@ export class MovieComponent implements OnInit, OnDestroy {
     private route: ActivatedRoute,
     private router :Router) { }
 
-  ngOnInit() {
+  ngOnInit() {/*
      this.movie = this.route.paramMap
        .switchMap((params :ParamMap) => {
        this.selectedId = +params.get('id');
@@ -31,7 +30,11 @@ export class MovieComponent implements OnInit, OnDestroy {
              return movie.id;
            });
          });
-     });
+     });*/
+    this.moviesDb.get()
+      .subscribe((movies) => {
+          return movies;
+      });
   }
 
   ngOnDestroy() {

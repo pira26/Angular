@@ -1,6 +1,5 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { MoviesService } from '../movies.service';
-import { Subscription } from 'rxjs/Subscription';
+import {Component, OnInit, OnDestroy} from '@angular/core';
+import {MoviesService} from '../movies.service';
 
 @Component({
   selector: 'app-movies-list',
@@ -9,13 +8,15 @@ import { Subscription } from 'rxjs/Subscription';
 })
 export class MoviesListComponent implements OnInit, OnDestroy {
 
-  movies :any[];
+  movies: Array<object>;
   year: number[];
-  private subscription :Subscription;
-  constructor(private moviesDb: MoviesService) { }
+  private subscription;
+
+  constructor(private moviesDb: MoviesService) {
+  }
 
   ngOnInit() {
-    this.moviesDb.get()
+    this.subscription = this.moviesDb.get()
       .subscribe((snap) => {
         console.log(snap);
         return this.movies = snap;
@@ -23,18 +24,21 @@ export class MoviesListComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    // this.subscription.unsubscribe();
+    this.subscription.unsubscribe();
   }
-  updateMovie(key :string, newText: object) {
+
+  updateMovie(key: string, newText: object) {
     this.moviesDb.get().update(key, newText);
   }
-  deleteMovie(key :string) {
+
+  deleteMovie(key: string) {
     this.moviesDb.get().remove(key);
   }
-  sortMoviesByYear(year) {
-    year.sort((a, b) => {
-      return a - b;
-    });
-    return year;
-  }
+
+  /*sortMoviesByYear(year) {
+   year.sort((a, b) => {
+   return a - b;
+   });
+   return year;
+   }*/
 }

@@ -1,10 +1,11 @@
+/*
 export class Movie {
   title: string;
   category: string;
   releaseYear: number;
   poster: string;
   actors: string;
-  producers: string;
+  directors: string;
   synopsis: string;
   rate: number;
   lastViewDate: string;
@@ -15,7 +16,7 @@ export class Movie {
                releaseYear: number,
                poster: string,
                actors: string,
-               producers: string,
+               directors: string,
                synopsis: string,
                rate: number,
                lastViewDate: string,
@@ -26,10 +27,24 @@ export class Movie {
   this.releaseYear = releaseYear;
   this.poster = poster;
   this.actors = actors;
-  this.producers = producers;
+  this.directors = directors;
   this.synopsis = synopsis;
   this.rate = rate;
   this.lastViewDate = lastViewDate;
   this.price = price;
   }
+}
+*/
+
+export interface Movie {
+  title: string;
+  category: string;
+  releaseYear: string;
+  poster: string;
+  actors: string;
+  directors: string;
+  synopsis: string;
+  rate: string;
+  lastViewDate: string;
+  price: string;
 }
