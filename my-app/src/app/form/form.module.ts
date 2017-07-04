@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormComponent } from './form.component';
 import { MoviesService } from '../movies/movies.service';
+import { EditFormComponent } from './edit-form/edit-form.component';
 
 @NgModule({
   imports: [
@@ -10,7 +11,7 @@ import { MoviesService } from '../movies/movies.service';
     FormsModule,
     ReactiveFormsModule
   ],
-  declarations: [FormComponent],
+  declarations: [FormComponent, EditFormComponent],
   providers: [MoviesService],
   exports: [FormComponent]
 })

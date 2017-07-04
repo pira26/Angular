@@ -1,44 +1,45 @@
-form((ngSubmit)='edit()', let form='ngForm')
+h2 Add Your Movie
+form([formGroup]='myForm', (ngSubmit)='save(myForm.value, myForm.valid)')
   div.small
     div.small-12.columns
       label
         | Title
-        input(type='text', name='title', [(ngmodel)]='movie.title', placeholder='Title', required)
+        input(type='text', placeholder='Title', formControlName='title')
     div.small-12.columns
       label
         | Category
-        input(type='text', name='category', [(ngmodel)]='movie.category', placeholder='Category', required)
+        input(type='text', placeholder='Category', formControlName='category')
     div.small-12.columns
       label
         | Directors
-        input(type='text', name='directors', [(ngmodel)]='movie.directors', placeholder='Directors', required)
+        input(type='text', placeholder='Directors', formControlName='directors')
     div.small-12.columns
       label
         | Release Year
-        input(type='text', name='releaseYear', [(ngmodel)]='movie.releaseYear', placeholder='Release Year', required)
+        input(type='text', placeholder='Release Year', formControlName='releaseYear')
     div.small-12.columns
       label
-        | Poster
-        input(type='text', name='poster', [(ngmodel)]='movie.poster', placeholder='URL Poster', required)
+        | Poster URL
+        input(type='text', placeholder='URL Poster', formControlName='poster')
     div.small-12.columns
       label
         | Actors
-        input(type='text', name='actors', [(ngmodel)]='movie.actors', placeholder='Actors', required)
+        input(type='text', placeholder='Actors', formControlName='actors')
     div.small-12.columns
       label
         | Synopsis
-        input(type='text', name='synopsis', [(ngmodel)]='movie.synopsis', placeholder='Synopsis', required)
+        input(type='text', placeholder='Synopsis', formControlName='synopsis')
     div.small-12.columns
       label
         | Rate
-        input(type='text', name='rate', [(ngmodel)]='movie.rate', placeholder='Rate', required)
+        input(type='text', placeholder='Rate', formControlName='rate')
     div.small-12.columns
       label
         | Last View Date
-        input(type='text', name='lastViewDate', [(ngmodel)]='movie.lastViewDate', placeholder='Last View Date', required)
+        input(type='text', placeholder='Last View Date', formControlName='lastViewDate')
     div.small-12.columns
       label
         | Price
-        input(type='text', name='price', [(ngmodel)]='movie.price', placeholder='Price', required)
+        input(type='text', placeholder='Price', formControlName='price')
     div.small-12.colums.align-right
-      button(type='button',).button.success SAVE
+      button(type='submit', [disabled]='myForm.invalid').button.success.large SAVE

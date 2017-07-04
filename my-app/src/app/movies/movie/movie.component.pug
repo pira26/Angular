@@ -5,6 +5,7 @@ div(*ngIf='movie')
     img(src='{{ movie.poster }}')
     div.card-section
       p {{ movie.synopsis }}
+    div.card-section
     table
       thead
         tr
@@ -19,7 +20,7 @@ div(*ngIf='movie')
           td {{ movie.category }}
           td {{ movie.actors }}
           td {{ movie.releaseYear }}
-          td {{ movie.lastYearDate }}
+          td {{ movie.lastViewDate | date }}
           td {{ movie.rate }}
-          td {{ movie.price }}
+          td {{ movie.price | currency }}
 

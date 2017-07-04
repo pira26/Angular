@@ -1,8 +1,6 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from "rxjs/Subscription";
-import { MoviesService } from "../movies.service";
-import {ActivatedRoute, ParamMap, Router} from "@angular/router";
-import {Observable} from "rxjs/Observable";
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {MoviesService} from "../movies.service";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-movie',
@@ -11,34 +9,28 @@ import {Observable} from "rxjs/Observable";
 })
 export class MovieComponent implements OnInit, OnDestroy {
 
-  movie :Array<object>;
-  private selectedId :number;
-  private subscription :Subscription;
-  constructor(
-    private moviesDb: MoviesService,
-    private route: ActivatedRoute,
-    private router :Router) { }
+  movie: any;
+  id: number;
+  private subscriptionParam;
+  private subscription;
 
-  ngOnInit() {/*
-     this.movie = this.route.paramMap
-       .switchMap((params :ParamMap) => {
-       this.selectedId = +params.get('id');
-       return this.moviesDb.get()
-         .subscribe((movies) => {
-           movies.find((movie) => {
-             console.log(movie.id);
-             return movie.id;
-           });
-         });
-     });*/
-    this.moviesDb.get()
-      .subscribe((movies) => {
-          return movies;
+  constructor(private moviesDb: MoviesService,
+              private route: ActivatedRoute) {
+  }
+
+  ngOnInit() {
+    this.subscriptionParam = this.route.params.subscribe((params) => {
+      this.id = params['id'];
+    });
+    this.subscription = this.moviesDb.getMovieById(this.id - 1)
+      .subscribe((snap) => {
+        return this.movie = snap;
       });
+
   }
 
   ngOnDestroy() {
-    // this.subscription.unsubscribe();
+    this.subscriptionParam.unsubscribe();
+    this.subscription.unsubscribe();
   }
-
 }

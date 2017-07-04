@@ -9,16 +9,14 @@ import {MoviesService} from '../movies.service';
 export class MoviesListComponent implements OnInit, OnDestroy {
 
   movies: Array<object>;
-  year: number[];
   private subscription;
 
   constructor(private moviesDb: MoviesService) {
   }
 
   ngOnInit() {
-    this.subscription = this.moviesDb.get()
+    this.subscription = this.moviesDb.getMovies()
       .subscribe((snap) => {
-        console.log(snap);
         return this.movies = snap;
       });
   }
@@ -27,18 +25,8 @@ export class MoviesListComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
-  updateMovie(key: string, newText: object) {
-    this.moviesDb.get().update(key, newText);
-  }
-
   deleteMovie(key: string) {
-    this.moviesDb.get().remove(key);
+    this.moviesDb.getMovies().remove(key);
   }
 
-  /*sortMoviesByYear(year) {
-   year.sort((a, b) => {
-   return a - b;
-   });
-   return year;
-   }*/
 }

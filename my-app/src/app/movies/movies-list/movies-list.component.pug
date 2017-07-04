@@ -2,7 +2,8 @@ div.small-12.colums
   div(*ngFor='let movie of movies', style='width: 400px;').card
     div.card-divider
       h4
-        |{{ movie.title }}
+        | {{ movie.title }}
+        |
         span by {{ movie.directors }}
       img([src]='movie.poster')
       div.card-section

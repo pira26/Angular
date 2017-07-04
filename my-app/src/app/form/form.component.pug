@@ -1,5 +1,5 @@
 h2 Add Your Movie
-form([formGroup]='myForm', (ngSubmit)='addMovie(myForm.value, myForm.valid)')
+form([formGroup]='myForm', (ngSubmit)='save(myForm.value, myForm.valid)')
   div.small
     div.small-12.columns
       label
@@ -19,7 +19,7 @@ form([formGroup]='myForm', (ngSubmit)='addMovie(myForm.value, myForm.valid)')
         input(type='text', placeholder='Release Year', formControlName='releaseYear')
     div.small-12.columns
       label
-        | Poster
+        | Poster URL
         input(type='text', placeholder='URL Poster', formControlName='poster')
     div.small-12.columns
       label
@@ -42,4 +42,4 @@ form([formGroup]='myForm', (ngSubmit)='addMovie(myForm.value, myForm.valid)')
         | Price
         input(type='text', placeholder='Price', formControlName='price')
     div.small-12.colums.align-right
-      button(type='submit', [disabled]='myForm.invalid').button.success.large ADD
+      button(type='submit', [disabled]='myForm.invalid').button.success.large SAVE

@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Movie } from '../movies/movie/movie.model';
-import { MoviesService } from '../movies/movies.service';
+import {Component, OnInit} from '@angular/core';
+import {FormGroup, FormBuilder, Validators} from '@angular/forms';
+import {Movie} from '../movies/movie/movie.model';
+import {MoviesService} from '../movies/movies.service';
 
 @Component({
   selector: 'app-form',
@@ -11,9 +11,9 @@ import { MoviesService } from '../movies/movies.service';
 
 export class FormComponent implements OnInit {
 
-  private myForm: FormGroup;
+  protected myForm: FormGroup;
 
-  movie :Movie = {
+  movie: Movie = {
     title: "",
     category: "",
     releaseYear: "",
@@ -26,10 +26,9 @@ export class FormComponent implements OnInit {
     price: ""
   };
 
-  constructor(
-    private moviesDb :MoviesService,
-    private fb: FormBuilder
-  ) {}
+  constructor(protected moviesDb: MoviesService,
+              protected fb: FormBuilder) {
+  }
 
   ngOnInit() {
     this.myForm = this.fb.group({
@@ -44,10 +43,11 @@ export class FormComponent implements OnInit {
       lastViewDate: [this.movie.lastViewDate, [Validators.required]],
       price: [this.movie.price, [Validators.required]]
     });
+    console.log('pp', this.myForm);
   }
 
-  addMovie() {
+  save() {
     console.log('form', this.myForm.value);
-    this.moviesDb.get().push(this.myForm.value);
+    this.moviesDb.getMovies().push(this.myForm.value);
   }
 }

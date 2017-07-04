@@ -12,7 +12,7 @@ export class SearchComponent implements OnInit {
   movies :any[];
   constructor(private moviesDb :MoviesService) {
     console.log('search bar');
-    this.moviesDb.get()
+    this.moviesDb.getMovies()
       .subscribe((snap) => {
         return this.movies = snap;
       });
