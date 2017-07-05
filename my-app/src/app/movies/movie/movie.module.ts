@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MovieComponent } from './movie.component';
-import { MoviesService } from '../movies.service';
+import { MoviesService } from '../../services/movies.service';
 
 @NgModule({
   imports: [

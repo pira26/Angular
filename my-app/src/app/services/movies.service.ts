@@ -3,13 +3,13 @@ import {AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable} f
 
 @Injectable()
 export class MoviesService {
-  constructor(private db: AngularFireDatabase) {
-  }
+  constructor(private db: AngularFireDatabase) {}
 
   getMovies(): FirebaseListObservable<any[]> {
     return this.db.list('/movies');
   }
-  getMovieById = (id: number): FirebaseObjectObservable<any[]> => {
+
+  getMovieById(id: number): FirebaseObjectObservable<any[]> {
     return this.db.object(`/movies/${id}`);
   }
 }

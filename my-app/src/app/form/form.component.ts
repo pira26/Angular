@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FormGroup, FormBuilder, Validators} from '@angular/forms';
 import {Movie} from '../movies/movie/movie.model';
-import {MoviesService} from '../movies/movies.service';
+import {MoviesService} from '../services/movies.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-form',
@@ -27,7 +28,8 @@ export class FormComponent implements OnInit {
   };
 
   constructor(protected moviesDb: MoviesService,
-              protected fb: FormBuilder) {
+              protected fb: FormBuilder,
+              protected router: Router) {
   }
 
   ngOnInit() {
@@ -49,5 +51,6 @@ export class FormComponent implements OnInit {
   save() {
     console.log('form', this.myForm.value);
     this.moviesDb.getMovies().push(this.myForm.value);
+    this.router.navigate(['/movies']);
   }
 }

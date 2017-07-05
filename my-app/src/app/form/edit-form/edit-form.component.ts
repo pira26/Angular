@@ -1,8 +1,8 @@
 import {Component} from '@angular/core';
 import {FormBuilder, Validators} from "@angular/forms";
-import {MoviesService} from "app/movies/movies.service";
+import {MoviesService} from "app/services/movies.service";
 import {FormComponent} from "../form.component";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-edit-form',
@@ -17,13 +17,15 @@ export class EditFormComponent extends FormComponent {
 
   constructor(protected moviesDb: MoviesService,
               protected fb: FormBuilder,
-              private route: ActivatedRoute) {
-    super(moviesDb, fb);
+              private route: ActivatedRoute,
+              protected router: Router) {
+    super(moviesDb, fb, router);
   }
 
   ngOnInit() {
     this.subscriptionParam = this.route.params.subscribe((params) => {
       this.id = params['id'];
+      console.log(this.id);
     });
     this.subscription = this.moviesDb.getMovieById(this.id - 1)
       .subscribe((snap) => {
@@ -46,12 +48,12 @@ export class EditFormComponent extends FormComponent {
   save() {
     console.log('form', this.myForm.value);
     this.moviesDb.getMovieById(this.id - 1).update(this.myForm.value);
+    this.router.navigate(['/movies']);
   }
 
   ngOnDestroy() {
     this.subscriptionParam.unsubscribe();
     this.subscription.unsubscribe();
   }
-
 
 }

@@ -15,7 +15,6 @@ import { Page1Module } from './page1/page1.module';
 import { MoviesModule } from './movies/movies.module';
 import { FormModule } from './form/form.module';
 import { MovieModule } from './movies/movie/movie.module';
-// import { AuthenticationModule } from './authentication/authentication.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,7 +23,6 @@ import { MovieModule } from './movies/movie/movie.module';
     RouterModule.forRoot(appRoutes),
     AngularFireModule.initializeApp(environment.firebase, 'my-angular-app'), // imports firebase/app needed for everything
     AngularFireDatabaseModule, // imports firebase/database, only needed for database features
-    // AuthenticationModule,
     HeaderModule,
     Page1Module,
     MoviesModule,

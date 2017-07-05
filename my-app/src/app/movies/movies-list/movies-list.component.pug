@@ -1,16 +1,17 @@
-div.small-12.colums
+div.small-12.colums.moviesList
   div(*ngFor='let movie of movies', style='width: 400px;').card
     div.card-divider
       h4
         | {{ movie.title }}
         |
-        span by {{ movie.directors }}
-      img([src]='movie.poster')
-      div.card-section
-        p {{ movie.synopsis }}
-      div
-        button(type='button', routerLink='{{ movie.id }}').button.tiny DETAILS
-        button(type='button', routerLink='/edit/{{ movie.id }}').button.tiny.warning UPDATE
-        button(type='button', (click)='deleteMovie(movie.id)').button.tiny.alert DELETE
+        span
+          i by {{ movie.directors }}
+    img([src]='movie.poster')
+    div.card-section
+      p {{ movie.synopsis }}
+    div.card-section.buttons
+      button(type='button', routerLink='{{ movie.id }}').button.tiny DETAILS
+      button(type='button', routerLink='/edit/{{ movie.id }}').button.tiny.warning UPDATE
+      button(type='button', (click)='deleteMovie(movie.id)').button.tiny.alert DELETE
   button(type='button', (click)='sortMoviesByYear(movie.releaseYear)').button.tiny Sort
 

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MoviesService } from '../movies.service';
+import { MoviesService } from '../../services/movies.service';
 import { MoviesListComponent } from './movies-list.component';
 import {RouterModule} from "@angular/router";
 import {appRoutes} from "app/app.routes";

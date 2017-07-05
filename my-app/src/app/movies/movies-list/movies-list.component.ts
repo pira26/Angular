@@ -1,5 +1,5 @@
 import {Component, OnInit, OnDestroy} from '@angular/core';
-import {MoviesService} from '../movies.service';
+import {MoviesService} from '../../services/movies.service';
 
 @Component({
   selector: 'app-movies-list',
@@ -25,8 +25,9 @@ export class MoviesListComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
-  deleteMovie(key: string) {
-    this.moviesDb.getMovies().remove(key);
+  deleteMovie(key :number) {
+    let id :number = key - 1;
+    this.moviesDb.getMovies().remove(id.toString());
   }
 
 }

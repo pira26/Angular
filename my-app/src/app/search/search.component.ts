@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {MoviesService} from "../movies/movies.service";
+import {Component, Input, OnInit} from '@angular/core';
+import {MoviesService} from "../services/movies.service";
+import {FirebaseListObservable} from "angularfire2/database";
 
 @Component({
   selector: 'app-search',
@@ -7,23 +8,18 @@ import {MoviesService} from "../movies/movies.service";
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
-  values :string = '';
-  value :string = '';
-  movies :any[];
-  constructor(private moviesDb :MoviesService) {
-    console.log('search bar');
-    this.moviesDb.getMovies()
-      .subscribe((snap) => {
-        return this.movies = snap;
-      });
-  }
+  values: string = '';
 
+  @Input() searchModel: string;
+  movies: FirebaseListObservable<any>;
+  constructor(public moviesDb: MoviesService) {
+  }
   ngOnInit() {
+    this.movies = this.moviesDb.getMovies()
   }
 
   onKey = (event) => {
-    this.values += event.target.value;
+    this.values = event.target.value;
     console.log(this.values)
   };
-  onEnter(value: string) { this.value += value; }
 }

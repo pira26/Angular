@@ -1,10 +1,7 @@
 div
   ul.menu
     li
-      input(type='search', placeholder='Movie', (keyup)='onKey($event)')
-      input(type='search', placeholder='Movie', 'let box', (keyup.enter)='onEnter(box.value)')
+      input(placeholder='Movie', [(ngModel)]='searchValue')
     li
-      button.button(type='button') Search
-div
-  ul(*ngFor='let movie of movies')
-    li(*ngIf='value === movie.title') {{ movie.title }}
+      button(type='button').button.small Search
+  p(*ngFor="let movie of (movies | async) | MovieFilterPipe:searchValue") {{ movie.title }}

@@ -1,0 +1,17 @@
+div.top-bar.row.expanded {
+  padding: 0;
+}
+.row,
+.top-bar-left,
+ul,
+a {
+  background-color: #FAFAFA;
+  color: #004A7C;
+  font-weight: bold;
+}
+
+a:hover {
+  background-color: #004A7C;
+  color: #FAFAFA;
+  border-radius: 10px;
+}

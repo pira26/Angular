@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {MoviesService} from "../movies.service";
+import {MoviesService} from "../../services/movies.service";
 import {ActivatedRoute} from "@angular/router";
 
 @Component({

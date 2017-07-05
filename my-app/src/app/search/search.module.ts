@@ -1,14 +1,23 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { SearchComponent } from './search.component';
-import {MoviesService} from "app/movies/movies.service";
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {SearchComponent} from './search.component';
+import {MoviesService} from "app/services/movies.service";
+import {MoviesListModule} from "../movies/movies-list/movies-list.module";
+import {MovieFilterPipe} from "../pipes/movies-list-pipe";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    MoviesListModule
   ],
-  declarations: [SearchComponent],
+  declarations: [
+    SearchComponent,
+    MovieFilterPipe],
   providers: [MoviesService],
   exports: [SearchComponent]
 })
-export class SearchModule { }
+
+export class SearchModule {
+}
