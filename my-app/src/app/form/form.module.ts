@@ -4,14 +4,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormComponent } from './form.component';
 import { MoviesService } from '../services/movies.service';
 import { EditFormComponent } from './edit-form/edit-form.component';
-import {RouterModule} from "@angular/router";
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule,
-    RouterModule
+    ReactiveFormsModule
   ],
   declarations: [FormComponent, EditFormComponent],
   providers: [MoviesService],

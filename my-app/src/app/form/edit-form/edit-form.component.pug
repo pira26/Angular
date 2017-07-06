@@ -43,3 +43,4 @@ form(*ngIf='flag', [formGroup]='myEditForm', (ngSubmit)='save(myEditForm.value, 
         input(type='text', placeholder='Price', formControlName='price')
     div.small-12.colums.align-right
       button(type='submit', [disabled]='myEditForm.invalid').button.success.large SAVE
+      button(type='button', (click)='goHome()').button.large BACK

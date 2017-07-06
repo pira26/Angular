@@ -3,14 +3,12 @@ import {CommonModule} from '@angular/common';
 import {EditFormComponent} from "./edit-form.component";
 import {FormModule} from "../form.module";
 import {ReactiveFormsModule} from "@angular/forms";
-import {RouterModule} from "@angular/router";
 
 @NgModule({
   imports: [
     CommonModule,
     FormModule,
-    ReactiveFormsModule,
-    RouterModule
+    ReactiveFormsModule
   ],
   declarations: [EditFormComponent],
   exports: [EditFormComponent]

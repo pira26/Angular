@@ -9,22 +9,22 @@ div(*ngIf='movie')
     img([src]='movie.poster')
     div.card-section
       p {{ movie.synopsis }}
-    div.card-section
-    table
-      thead
-        tr
-          th(width='100') Category
-          th Actors
-          th(width='150') Release Year
-          th(width='150') Last View Date
-          th(width='150') Rate
-          th(width='150') Price
-      tbody
-        tr
-          td {{ movie.category }}
-          td {{ movie.actors }}
-          td {{ movie.releaseYear }}
-          td {{ movie.lastViewDate | date }}
-          td {{ movie.rate }}
-          td {{ movie.price | currency }}
+      table
+        thead
+          tr
+            th Category
+            th Actors
+            th Release Year
+            th Last View Date
+            th Rate
+            th Price
+        tbody
+          tr
+            td {{ movie.category }}
+            td {{ movie.actors }}
+            td {{ movie.releaseYear }}
+            td {{ movie.lastViewDate | date }}
+            td {{ movie.rate }}
+            td {{ movie.price | currency }}
+      button(type='button', (click)='goHome()').button.large BACK
 

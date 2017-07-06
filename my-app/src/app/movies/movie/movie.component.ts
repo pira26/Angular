@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {MoviesService} from "../../services/movies.service";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-movie',
@@ -15,7 +15,8 @@ export class MovieComponent implements OnInit, OnDestroy {
   private subscription;
 
   constructor(private moviesDb: MoviesService,
-              private route: ActivatedRoute) {
+              private route: ActivatedRoute,
+              private router: Router) {
   }
 
   ngOnInit() {
@@ -32,5 +33,9 @@ export class MovieComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.subscriptionParam.unsubscribe();
     this.subscription.unsubscribe();
+  }
+
+  goHome() {
+    this.router.navigate(['/movies']);
   }
 }

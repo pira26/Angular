@@ -48,6 +48,10 @@ export class EditFormComponent implements OnInit, OnDestroy {
   save() {
     console.log('form', this.myEditForm.value);
     this.moviesDb.getMovieById(this.id - 1).update(this.myEditForm.value);
+    this.goHome();
+  }
+
+  goHome() {
     this.router.navigate(['/movies']);
   }
 

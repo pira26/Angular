@@ -49,6 +49,10 @@ export class FormComponent implements OnInit {
   save() {
     console.log('form', this.myForm.value);
     this.moviesDb.getMovies().push(this.myForm.value);
+    this.goHome();
+  }
+
+  goHome() {
     this.router.navigate(['/movies']);
   }
 }
