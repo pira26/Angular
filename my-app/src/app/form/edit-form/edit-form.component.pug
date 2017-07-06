@@ -1,46 +1,46 @@
 h2 Edit Your Movie
 form(*ngIf='flag', [formGroup]='myEditForm', (ngSubmit)='save(myEditForm.value, myEditForm.valid)')
   div.small
-    div.small-12.columns
+    div.small-8.columns
       label
         | Title
         input(type='text', placeholder='Title', formControlName='title')
-    div.small-12.columns
+    div.small-8.columns
       label
         | Category
         input(type='text', placeholder='Category', formControlName='category')
-    div.small-12.columns
+    div.small-8.columns
       label
         | Directors
         input(type='text', placeholder='Directors', formControlName='directors')
-    div.small-12.columns
+    div.small-8.columns
       label
         | Release Year
         input(type='text', placeholder='Release Year', formControlName='releaseYear')
-    div.small-12.columns
+    div.small-8.columns
       label
         | Poster URL
         input(type='text', placeholder='URL Poster', formControlName='poster')
-    div.small-12.columns
+    div.small-8.columns
       label
         | Actors
         input(type='text', placeholder='Actors', formControlName='actors')
-    div.small-12.columns
+    div.small-8.columns
       label
         | Synopsis
         input(type='text', placeholder='Synopsis', formControlName='synopsis')
-    div.small-12.columns
+    div.small-8.columns
       label
         | Rate
         input(type='text', placeholder='Rate', formControlName='rate')
-    div.small-12.columns
+    div.small-8.columns
       label
         | Last View Date
         input(type='text', placeholder='Last View Date', formControlName='lastViewDate')
-    div.small-12.columns
+    div.small-8.columns
       label
         | Price
         input(type='text', placeholder='Price', formControlName='price')
-    div.small-12.colums.align-right
-      button(type='submit', [disabled]='myEditForm.invalid').button.success.large SAVE
+    div.small-8.colums.text-right
       button(type='button', (click)='goHome()').button.large BACK
+      button(type='submit', [disabled]='myEditForm.invalid').button.success.large SAVE

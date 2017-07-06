@@ -12,12 +12,12 @@ div.small-12.colums.moviesList
         |
         span
           i by {{ movie.directors }}
-    img([src]='movie.poster')
+    img([src]='movie.poster', style='width: 400px;')
     div.card-section
       p {{ movie.synopsis }}
     div.card-section.buttons
-      button(type='button', routerLink='{{ movie.id }}').button.tiny DETAILS
-      button(type='button', routerLink='/edit/{{ movie.id }}').button.tiny.warning UPDATE
-      button(type='button', (click)='deleteMovie(movie.id)').button.tiny.alert DELETE
-  button(type='button', (click)='sortMoviesByYear(movie.releaseYear)').button.tiny Sort
+      button(type='button', routerLink='{{ movie.id }}').button.small DETAILS
+      button(type='button', routerLink='/edit/{{ movie.id }}').button.small.warning UPDATE
+      button(type='button', (click)='deleteMovie(movie.id)').button.small.alert DELETE
+  button(type='button', (click)='sortMoviesByYear(movie.releaseYear)').button SORT
 

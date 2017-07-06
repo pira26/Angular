@@ -4,6 +4,7 @@ import { HeaderComponent } from './header.component';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from 'app/app.routes';
 import {AuthenticationModule} from "../authentication/authentication.module";
+import {AuthenticationService} from "../services/authentication.service";
 
 @NgModule({
   imports: [
