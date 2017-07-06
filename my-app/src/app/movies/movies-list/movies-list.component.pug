@@ -4,7 +4,7 @@ div.small-12.colums.moviesList
       li
         input(placeholder='Movie', [(ngModel)]='searchValue')
       li
-        button(type='button').button.small Search
+        button(type='button').button.tiny Search
   div(*ngFor='let movie of movies | MovieFilterPipe:searchValue', style='width: 400px;').card
     div.card-divider
       h4

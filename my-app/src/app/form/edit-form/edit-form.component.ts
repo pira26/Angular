@@ -12,7 +12,7 @@ export class EditFormComponent implements OnInit, OnDestroy {
   private myEditForm: FormGroup;
   private movie: any;
   private id: any;
-  private flag: boolean = true;
+  private flag: boolean;
   private subscriptionParam;
   private subscription;
 

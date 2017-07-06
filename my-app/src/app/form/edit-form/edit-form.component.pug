@@ -1,5 +1,5 @@
 h2 Edit Your Movie
-form([formGroup]='myEditForm', (ngSubmit)='save(myEditForm.value, myEditForm.valid)')
+form(*ngIf='flag', [formGroup]='myEditForm', (ngSubmit)='save(myEditForm.value, myEditForm.valid)')
   div.small
     div.small-12.columns
       label
