@@ -10,7 +10,7 @@ import {ActivatedRoute} from "@angular/router";
 export class MovieComponent implements OnInit, OnDestroy {
 
   movie: any;
-  id: number;
+  id: any;
   private subscriptionParam;
   private subscription;
 

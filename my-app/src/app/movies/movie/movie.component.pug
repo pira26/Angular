@@ -1,8 +1,12 @@
 div(*ngIf='movie')
   div.card
     div.card-divider
-      h4 {{ movie.title }} by {{ movie.directors }}
-    img(src='{{ movie.poster }}')
+      h4
+        | {{ movie.title }}
+        |
+        span
+          i by {{ movie.directors }}
+    img([src]='movie.poster')
     div.card-section
       p {{ movie.synopsis }}
     div.card-section

@@ -11,8 +11,7 @@ import {AuthenticationService} from "../services/authentication.service";
   imports: [
     CommonModule,
     AuthenticationModule,
-    RouterModule.forRoot(appRoutes),
-    SearchModule
+    RouterModule.forRoot(appRoutes)
   ],
   declarations: [HeaderComponent],
   providers:[AuthenticationService],

@@ -9,7 +9,7 @@ export class MoviesService {
     return this.db.list('/movies');
   }
 
-  getMovieById(id: number): FirebaseObjectObservable<any[]> {
+  getMovieById(id: any): FirebaseObjectObservable<any[]> {
     return this.db.object(`/movies/${id}`);
   }
 }

@@ -8,7 +8,7 @@ export class MovieFilterPipe implements PipeTransform {
     if(!movies || !value) {
       return movies;
     }
-    return movies.filter(movie => {
+    return movies.filter((movie) => {
       for (let key in movie) {
         if ((movie[key]).toString().toLowerCase().includes(value.toLowerCase())) {
           return true;

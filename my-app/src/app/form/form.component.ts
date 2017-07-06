@@ -12,9 +12,8 @@ import {Router} from "@angular/router";
 
 export class FormComponent implements OnInit {
 
-  protected myForm: FormGroup;
-
-  movie: Movie = {
+  private myForm: FormGroup;
+  private movie: Movie = {
     title: "",
     category: "",
     releaseYear: "",
@@ -27,9 +26,9 @@ export class FormComponent implements OnInit {
     price: ""
   };
 
-  constructor(protected moviesDb: MoviesService,
-              protected fb: FormBuilder,
-              protected router: Router) {
+  constructor(private moviesDb: MoviesService,
+              private fb: FormBuilder,
+              private router: Router) {
   }
 
   ngOnInit() {
@@ -45,7 +44,6 @@ export class FormComponent implements OnInit {
       lastViewDate: [this.movie.lastViewDate, [Validators.required]],
       price: [this.movie.price, [Validators.required]]
     });
-    console.log('pp', this.myForm);
   }
 
   save() {

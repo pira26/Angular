@@ -13,8 +13,8 @@ import {FormsModule} from "@angular/forms";
     MoviesListModule
   ],
   declarations: [
-    SearchComponent,
-    MovieFilterPipe],
+    SearchComponent
+  ],
   providers: [MoviesService],
   exports: [SearchComponent]
 })

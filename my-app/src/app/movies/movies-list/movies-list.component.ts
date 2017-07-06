@@ -1,4 +1,4 @@
-import {Component, OnInit, OnDestroy} from '@angular/core';
+import {Component, OnInit, OnDestroy, Input} from '@angular/core';
 import {MoviesService} from '../../services/movies.service';
 
 @Component({
@@ -7,7 +7,7 @@ import {MoviesService} from '../../services/movies.service';
   styleUrls: ['./movies-list.component.css']
 })
 export class MoviesListComponent implements OnInit, OnDestroy {
-
+@Input() searchValue :any;
   movies: Array<object>;
   private subscription;
 

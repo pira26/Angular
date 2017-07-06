@@ -1,5 +1,5 @@
-h2 Add Your Movie
-form([formGroup]='myForm', (ngSubmit)='save(myForm.value, myForm.valid)')
+h2 Edit Your Movie
+form([formGroup]='myEditForm', (ngSubmit)='save(myEditForm.value, myEditForm.valid)')
   div.small
     div.small-12.columns
       label
@@ -42,4 +42,4 @@ form([formGroup]='myForm', (ngSubmit)='save(myForm.value, myForm.valid)')
         | Price
         input(type='text', placeholder='Price', formControlName='price')
     div.small-12.colums.align-right
-      button(type='submit', [disabled]='myForm.invalid').button.success.large SAVE
+      button(type='submit', [disabled]='myEditForm.invalid').button.success.large SAVE

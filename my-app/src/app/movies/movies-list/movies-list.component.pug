@@ -1,5 +1,11 @@
 div.small-12.colums.moviesList
-  div(*ngFor='let movie of movies', style='width: 400px;').card
+  div
+    ul.menu
+      li
+        input(placeholder='Movie', [(ngModel)]='searchValue')
+      li
+        button(type='button').button.small Search
+  div(*ngFor='let movie of movies | MovieFilterPipe:searchValue', style='width: 400px;').card
     div.card-divider
       h4
         | {{ movie.title }}
