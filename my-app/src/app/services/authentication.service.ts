@@ -8,11 +8,11 @@ export class AuthenticationService {
 
   user: Observable<firebase.User>;
 
-  constructor(public afAuth: AngularFireAuth) {
+  constructor(private afAuth: AngularFireAuth) {
     this.user = afAuth.authState;
   }
 
-  signup(email: string, password: string) {
+  signUpUser(email: string, password: string) {
     this.afAuth
       .auth
       .createUserWithEmailAndPassword(email, password)
@@ -24,7 +24,7 @@ export class AuthenticationService {
       });
   }
 
-  login(email: string, password: string) {
+  logInUser(email: string, password: string) {
     this.afAuth
       .auth
       .signInWithEmailAndPassword(email, password)
@@ -36,10 +36,35 @@ export class AuthenticationService {
       });
   }
 
-  logout() {
+  logOutUser() {
     this.afAuth
       .auth
-      .signOut();
+      .signOut()
+      .then( () => console.log('sign out successfully'))
+      .catch((err) => {
+        console.error('Something went wrong:',err.message);
+      });
   }
+
+  signUpUserWithGoogle() {
+    this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+  }
+
+/*
+  private email :string;
+  private password :string;
+
+  constructor() {}
+
+  signUpUser(email, password) {
+    firebase.auth()
+      .createUserWithEmailAndPassword(this.email, this.password)
+      .catch((err) => {
+        // Handle Errors here.
+        let errorCode = err;
+        let errorMessage = err.message;
+        console.log('sign in', errorCode, errorMessage);
+      });
+  }*/
 
 }

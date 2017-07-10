@@ -1,8 +1,14 @@
-div
-  label Email
-    input(type='text', placeholder='Email')
-  label Password
-    input(type='password')
-  button(type='button', (click)='signIn()').button Sign In
-  button(type='button', (click)='logIn()').button Log In
-  button(type='button', (click)='logOut()').button.hide Log Out
+div.card.row
+  div.card-divider.small-6.colums
+    h2 Welcome
+    label Email
+      input(type='text', placeholder='Email')
+    label Password
+      input(type='password', placeholder='Password')
+    div.card-section.text-center
+      button(type='button', (click)='signIn()').button Sign In
+      button(type='button', (click)='logIn()').button Log In
+      button(type='button', (click)='logOut()').button.hide Log Out
+    div.card-section.text-center
+      button(type='button', (click)='signUpWithGoogle()').button.alert Sign Up with Google
+      button(type='button', (click)='logOut()').button.hide Log Out
