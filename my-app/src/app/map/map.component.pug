@@ -1,0 +1,7 @@
+form.formGroup
+  input.formControl(placeholder='search for location', autocorrect='off', autocapitalize='off', spellcheck='off', type='text', let search='', [formControl]='searchControl')
+agm-map([latitude]='latitude', [longitude]='longitude', [scrollwheel]='false', [zoom]='zoom')
+  agm-marker([latitude]='latitude', [longitude]='longitude').form-group
+    input.formControl(placeholder='search for location', autocorrect='off', autocapitalize='off', spellcheck='off', type='text', let search='', [formControl]='searchControl')
+  agm-map([latitude]='latitude', [longitude]='longitude', [scrollwheel]='false', [zoom]='zoom')
+    agm-marker([latitude]='latitude', [longitude]='longitude')
